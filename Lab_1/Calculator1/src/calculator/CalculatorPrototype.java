@@ -13,28 +13,42 @@ public class CalculatorPrototype  implements CalculatorIF{
 
     @Override
     public int sum(int m, int n) {
-        for(int i=0; i<n;i++){
-            m+=1;
-        }
-        return m;
+    	int result = m;
+    	while (n != 0) {
+    	result += 1;
+    	n-=1;
+
+    	}
+    	return result;
     }
 
     @Override
-    public int divide(int m, int n) {
-        int counter=0;
-        while(m>0){
-            m-=n;
-            counter++;
+    	public int divide (int m, int n){
+            int result = 0;
+            while (m>0){
+                m-=n;
+                result++;
+            }
+            if (m!=0){
+                result -= 1;
+            }
+            return result;
         }
-        if(m!=0){
-            counter-=1;
-        }
-        return counter;
-    }
 
-    @Override
-    public int multi(int m, int n) {
-       return sum(m,n)*n;
-    }
+	@Override
+	public int multiply(int m, int n) {
+		for(int i=0; i<n;i++) {
+			m+=m;
+		}
+		return m;
+	}
+
+	@Override
+	public int subtract(int m, int n) {
+		for(int i=0; i<n;i++) {
+			m--;
+		}
+		return m;
+	}
     
 }
