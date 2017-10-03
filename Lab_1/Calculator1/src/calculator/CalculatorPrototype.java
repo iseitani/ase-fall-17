@@ -13,6 +13,12 @@ public class CalculatorPrototype  implements CalculatorIF{
 
     @Override
     public int sum(int m, int n) {
+    	if(m<0) {
+      		 m=Math.abs(m);
+   	   	 }
+   	   	 else if(n<0) {
+   	   		 n=Math.abs(n);
+   	   	 }
     	int result = m;
     	while (n != 0) {
     	result += 1;
@@ -24,6 +30,12 @@ public class CalculatorPrototype  implements CalculatorIF{
 
     @Override
     	public int divide (int m, int n){
+    	if(m<0) {
+   		 m=Math.abs(m);
+	   	 }
+	   	 else if(n<0) {
+	   		 n=Math.abs(n);
+	   	 }
             int result = 0;
             while (m>0){
                 m-=n;
@@ -37,14 +49,27 @@ public class CalculatorPrototype  implements CalculatorIF{
 
 	@Override
 	public int multiply(int m, int n) {
-		for(int i=0; i<n;i++) {
-			m+=m;
-		}
-		return m;
+	 if(m<0) {
+		 m=Math.abs(m);
+	 }
+	 else if(n<0) {
+		 n=Math.abs(n);
+	 }
+     int result = 0; 
+	 for(int i = 0; i < n; i++) {
+				result+=m;
+			}
+	 return result;
 	}
 
 	@Override
 	public int subtract(int m, int n) {
+		if(m<0) {
+			 m=Math.abs(m);
+		 }
+		 else if(n<0) {
+			 n=Math.abs(n);
+		 }
 		for(int i=0; i<n;i++) {
 			m--;
 		}

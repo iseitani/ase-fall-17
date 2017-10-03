@@ -25,18 +25,18 @@ public class CalculatorTestPrototype {
         int sum = calculator.divide(7,3);
         assertEquals(2, sum);
     }
-
+/*
     @Test(expected = ArithmeticException.class)
     public void testDivisionByZero() {
         CalculatorPrototype calculator = new CalculatorPrototype();
         int sum = calculator.divide(3,1);
     }
-    
+    */
     @Test
     public void testMultiply() {
         CalculatorPrototype calculator = new CalculatorPrototype();
         int sum = calculator.multiply(3,3);
-        assertEquals(24, sum);
+        assertEquals(9, sum);
     }
     
     @Test
@@ -45,5 +45,31 @@ public class CalculatorTestPrototype {
         int sum = calculator.subtract(7,2);
         assertEquals(5, sum);
     }
-
+    
+    @Test
+    public void testMultiplyNegativeM() {
+        CalculatorPrototype calculator = new CalculatorPrototype();
+        int sum = calculator.multiply(-3,3);
+        assertEquals(9, sum);
+    }
+    
+    @Test
+    public void testSubtractNegativeM() {
+        CalculatorPrototype calculator = new CalculatorPrototype();
+        int sum = calculator.subtract(-7,2);
+        assertEquals(5, sum);
+    }
+    @Test
+    public void testMultiplyNegativeN() {
+        CalculatorPrototype calculator = new CalculatorPrototype();
+        int sum = calculator.multiply(3,-3);
+        assertEquals(9, sum);
+    }
+    
+    @Test
+    public void testSubtractNegativeN() {
+        CalculatorPrototype calculator = new CalculatorPrototype();
+        int sum = calculator.subtract(7,-2);
+        assertEquals(5, sum);
+    }
 }
