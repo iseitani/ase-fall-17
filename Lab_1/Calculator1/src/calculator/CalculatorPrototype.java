@@ -14,18 +14,15 @@ public class CalculatorPrototype  implements CalculatorIF{
     @Override
     public int sum(int m, int n) {
     	if(m<0) {
-      		 m=Math.abs(m);
-   	   	 }
-   	   	 else if(n<0) {
-   	   		 n=Math.abs(n);
-   	   	 }
-    	int result = m;
-    	while (n != 0) {
-    	result += 1;
-    	n-=1;
-
+			 m=Math.abs(m);
+		 }
+		 else if(n<0) {
+			 n=Math.abs(n);
+		 }
+    	for(int i=0; i<n;i++) {
+    	m += 1;
     	}
-    	return result;
+    	return m;
     }
 
     @Override
